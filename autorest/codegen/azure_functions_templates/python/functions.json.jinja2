@@ -1,0 +1,10 @@
+{
+  "scriptFile": {{ script_filename }},
+  "bindings": [
+{{ input_trigger }}{{ "," if output_bindings }}
+{% for binding in output_bindings %}
+    {{ binding }}{{ "," if not loop.last }}
+{% endfor %}
+  ],
+  "disabled": {{ "true" if is_disabled else "false" }}
+}

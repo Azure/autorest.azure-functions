@@ -8,6 +8,7 @@ __pycache__/
 
 # Distribution / packaging
 .Python
+env/
 build/
 develop-eggs/
 dist/
@@ -104,11 +105,12 @@ celerybeat.pid
 # Environments
 .env
 .venv
-env/
+.venv*
 venv/
 ENV/
 env.bak/
 venv.bak/
+py3env/
 
 # Spyder project settings
 .spyderproject
@@ -121,9 +123,36 @@ venv.bak/
 /site
 
 # mypy
+mypy_cache/
 .mypy_cache/
 .dmypy.json
 dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Test config
+.testconfig
+.pytest_cache
+
+# macOS specific files
+.DS_Store
+
+# PyCharm related files
+.idea/
+.idea_modules/
+
+# VSCode Info
+.vscode/
+
+# Autorest files
+inspector/
+node_modules/
+package-lock.json
+
+# Temporary builds
+autorest-azurefunction*gz
+autorest-azure-functions*gz
+
+# NPMrc files
+.npmrc

@@ -1,0 +1,10 @@
+{
+    "authLevel": {{ authentication_level }},
+    "type": {{ trigger_type }},
+    "direction": {{ trigger_direction }},
+    "name": {{ request_variable_name }},
+    "methods": [{{ methods }}]{{ "," if route}}
+    {% if route %}
+        "route" : {{ route }}
+    {% endif %}
+}

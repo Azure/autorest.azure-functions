@@ -1,0 +1,87 @@
+{% import 'operation_tools.jinja2' as op_tools %}
+{
+    "chosen_version": {{ chosen_version | tojson }},
+    "total_api_version_list": {{ total_api_version_list | tojson }},
+    "client": {
+        "name": {{ code_model.class_name | tojson }},
+        "filename": {{ ("_" + code_model.module_name) | tojson }},
+        "description": {{ code_model.description | tojson }}
+    },
+    "global_parameters": {
+        "sync_method": {
+            {% for gp in sync_global_parameters.method %}
+            {{ gp.serialized_name | tojson }}: {
+                "method_signature": {{ gp.sync_method_signature | tojson }},
+                "description": {{ gp.description | tojson }},
+                "docstring_type": {{ gp.schema.docstring_type | tojson }},
+                "required": {{ gp.required | tojson }}
+            }{{ "," if not loop.last else "" }}
+            {% endfor %}
+        },
+        "async_method": {
+            {% for gp in async_global_parameters.method %}
+            {{ gp.serialized_name | tojson }}: {
+                "method_signature": {{ gp.sync_method_signature | tojson }},
+                "description": {{ gp.description | tojson }},
+                "docstring_type": {{ gp.schema.docstring_type | tojson }},
+                "required": {{ gp.required | tojson }}
+            }{{ "," if not loop.last else "" }}
+            {% endfor %}
+        },
+        "constant": {
+            {% for gp in code_model.global_parameters.constant %}
+            {% if gp.serialized_name != "api_version" %}
+            {{ gp.serialized_name | tojson }}: {{ gp.schema.constant_value | tojson }}{{ "," if not loop.last else "" }}
+            {% endif %}
+            {% endfor %}
+        },
+        "call": {{ code_model.global_parameters.method | map(attribute="serialized_name") | join(', ') | tojson }}
+    },
+    "config": {
+        "credential": {{ code_model.options['credential'] | tojson }},
+        "credential_scopes": {{ code_model.options['credential_scopes'] | tojson }}
+    },
+    "operation_groups": {
+        {% for operation_group in code_model.operation_groups %}
+            {% if not operation_group.is_empty_operation_group %}
+        {{ operation_group.name | tojson }}: {{ operation_group.class_name | tojson }}{{ "," if not loop.last else "" }}
+            {% endif %}
+        {% endfor %}
+    },
+    "operation_mixins": {
+        {% for operation in mixin_operations %}
+        {% set operation_name = "begin_" + operation.name if is_lro(operation) else operation.name %}
+        {{ operation_name | tojson }} : {
+            "sync": {
+                {% set sync_return_type_wrapper = "LROPoller" if is_lro(operation) else ("ItemPaged" if is_paging(operation) else "") %}
+                "signature": {{ op_tools.method_signature(operation, operation_name, False, False, sync_return_type_wrapper) | tojson }},
+                {% if is_lro(operation) %}
+                    {% from "lro_operation.py.jinja2" import operation_docstring with context %}
+                {% elif is_paging(operation) %}
+                    {% from "paging_operation.py.jinja2" import operation_docstring with context %}
+                {% else %}
+                    {% from "operation.py.jinja2" import operation_docstring with context %}
+                {% endif %}
+                "doc": {{ operation_docstring(async_mode=False) | tojson }}
+            },
+            "async": {
+                {% set coroutine = False if is_paging(operation) else True %}
+                {% set async_return_type_wrapper = "AsyncLROPoller" if is_lro(operation) else ("AsyncItemPaged" if is_paging(operation) else "") %}
+                "signature": {{ op_tools.method_signature(operation, operation_name, True, coroutine, async_return_type_wrapper) | tojson }},
+                "coroutine": {{ coroutine | tojson }},
+                {% if is_lro(operation) %}
+                    {% from "lro_operation.py.jinja2" import operation_docstring with context %}
+                {% elif is_paging(operation) %}
+                    {% from "paging_operation.py.jinja2" import operation_docstring with context %}
+                {% else %}
+                    {% from "operation.py.jinja2" import operation_docstring with context %}
+                {% endif %}
+                "doc": {{ operation_docstring(async_mode=True) | tojson }}
+            },
+            "call": {{ operation.parameters.method | map(attribute="serialized_name") | join(', ') | tojson }}
+        }{{ "," if not loop.last else "" }}
+        {% endfor %}
+    },
+    "sync_imports": {{ str(sync_mixin_imports) | tojson }},
+    "async_imports": {{ str(async_mixin_imports) | tojson }}
+}

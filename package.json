@@ -1,0 +1,45 @@
+{
+  "name": "@autorest/azure-functions",
+  "version": "0.0.1-preview",
+  "description": "The Azure Functions extension for code generators in AutoRest.",
+  "scripts": {
+    "prepare": "node run-python3.js prepare.py",
+    "start": "node run-python3.js start.py",
+    "install": "node run-python3.js install.py"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Azure/autorest.python/tree/autorestv3"
+  },
+  "readme": "https://github.com/Azure/autorest.python/blob/autorestv3/README.md",
+  "keywords": [
+    "autorest",
+    "python",
+    "azure",
+    "azure-functions"
+  ],
+  "author": "Microsoft Corporation",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Azure/autorest.python/issues"
+  },
+  "homepage": "https://github.com/Azure/autorest.python/blob/autorestv3/README.md",
+  "dependencies": {
+    "@azure-tools/extension": "^3.0.251"
+  },
+  "devDependencies": {
+    "@autorest/autorest": "^3.0.0",
+    "@microsoft.azure/autorest.testserver": "2.10.42"
+  },
+  "files": [
+    "autorest/**/*.py",
+    "autorest/**/*.jinja2",
+    "config",
+    "setup.py",
+    "install.py",
+    "prepare.py",
+    "start.py",
+    "venvtools.py",
+    "run-python3.js"
+  ]
+}

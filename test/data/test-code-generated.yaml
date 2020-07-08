@@ -1,0 +1,2774 @@
+globalParameters:
+- &id001
+  clientDefaultValue: https://virtserver.swaggerhub.com/petstore/api/v1.0.0
+  extensions:
+    x-ms-skip-url-encoding: true
+  implementation: Client
+  language:
+    default:
+      description: server parameter
+      name: $host
+      serializedName: $host
+    python:
+      description: server parameter.
+      name: host
+      serializedName: $host
+  origin: modelerfour:synthesized/host
+  protocol:
+    http:
+      in: uri
+  required: true
+  schema: &id044
+    choices:
+    - language:
+        default:
+          description: 'host: https://virtserver.swaggerhub.com/petstore/api/v1.0.0'
+          name: https_virtserver_swaggerhub_com_petstore_api_v1_0_0
+        python:
+          description: 'host: https://virtserver.swaggerhub.com/petstore/api/v1.0.0.'
+          name: https_virtserver_swaggerhub_com_petstore_api_v1_0_0
+      value: https://virtserver.swaggerhub.com/petstore/api/v1.0.0
+    - language:
+        default:
+          description: 'host: http://virtserver.swaggerhub.com/petstore/api/v1.0.0'
+          name: http_virtserver_swaggerhub_com_petstore_api_v1_0_0
+        python:
+          description: 'host: http://virtserver.swaggerhub.com/petstore/api/v1.0.0.'
+          name: http_virtserver_swaggerhub_com_petstore_api_v1_0_0
+      value: http://virtserver.swaggerhub.com/petstore/api/v1.0.0
+    language:
+      default:
+        description: choices for server host
+        name: HostOptions
+      python:
+        description: choices for server host
+        name: HostOptions
+    protocol: {}
+    type: choice
+info:
+  contact:
+    email: apiteam@swagger.io
+  description: "This is a sample server Petstore server.  You can find \nout more\
+    \ about Swagger at \n`http://swagger.io <http://swagger.io>`_ or on \n`irc.freenode.net,\
+    \ #swagger <http://swagger.io/irc/>`_."
+  externalDocs:
+    description: Find out more about Swagger
+    url: http://swagger.io
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  pascal_case_title: SwaggerPetstore
+  python_title: swagger_petstore
+  termsOfService: http://swagger.io/terms/
+  title: Swagger Petstore
+language:
+  default:
+    description: ''
+    name: SwaggerPetstore
+  python:
+    description: ''
+    name: swaggerpetstore
+operationGroups:
+- $key: ''
+  language:
+    default:
+      description: ''
+      name: ''
+    python:
+      className: SwaggerPetstoreOperationsMixin
+      description: ''
+      name: model
+  operations:
+  - apiVersions:
+    - version: 1.0.0
+    language:
+      default:
+        description: Add a new pet to the store
+        name: add_pet
+        summary: Add a new pet to the store
+      python:
+        description: Add a new pet to the store.
+        name: add_pet
+        summary: Add a new pet to the store.
+    parameters:
+    - *id001
+    protocol: {}
+    requests:
+    - language:
+        default:
+          description: ''
+          name: ''
+        python:
+          description: ''
+          name: ''
+      parameters:
+      - implementation: Method
+        language:
+          default:
+            description: Body Parameter content-type
+            name: content_type
+            serializedName: Content-Type
+          python:
+            description: Body Parameter content-type.
+            name: content_type
+            serializedName: Content-Type
+        origin: modelerfour:synthesized/content-type
+        protocol:
+          http:
+            in: header
+        required: true
+        schema: &id005
+          language:
+            default:
+              description: Content Type 'application/json'
+              name: application_json
+            python:
+              description: Content Type 'application/json'.
+              name: application_json
+          protocol: {}
+          type: constant
+          value:
+            value: application/json
+          valueType: &id003
+            language:
+              default:
+                description: simple string
+                name: String
+              python:
+                description: simple string.
+                name: string
+            protocol: {}
+            type: string
+      - &id004
+        implementation: Method
+        language:
+          default:
+            description: Pet object that needs to be added to the store
+            name: body
+          python:
+            description: Pet object that needs to be added to the store.
+            name: body
+        protocol:
+          http:
+            in: body
+            style: json
+        required: true
+        schema: &id006
+          apiVersions:
+          - version: 1.0.0
+          language:
+            default:
+              description: ''
+              name: Pet
+              namespace: ''
+            python:
+              description: Pet.
+              name: Pet
+              namespace: ''
+          properties:
+          - language:
+              default:
+                description: ''
+                name: id
+              python:
+                description: ''
+                name: id
+            protocol: {}
+            required: false
+            schema: &id002
+              language:
+                default:
+                  description: ''
+                  name: Integer
+                python:
+                  description: ''
+                  name: integer
+              precision: 64
+              protocol: {}
+              type: integer
+            serializedName: id
+          - language:
+              default:
+                description: ''
+                name: category
+              python:
+                description: ''
+                name: category
+            protocol: {}
+            required: false
+            schema: &id055
+              apiVersions:
+              - version: 1.0.0
+              language:
+                default:
+                  description: ''
+                  name: Category
+                  namespace: ''
+                python:
+                  description: Category.
+                  name: Category
+                  namespace: ''
+              properties:
+              - language:
+                  default:
+                    description: ''
+                    name: id
+                  python:
+                    description: ''
+                    name: id
+                protocol: {}
+                schema: *id002
+                serializedName: id
+              - language:
+                  default:
+                    description: ''
+                    name: name
+                  python:
+                    description: ''
+                    name: name
+                protocol: {}
+                schema: &id058
+                  apiVersions:
+                  - version: 1.0.0
+                  language:
+                    default:
+                      description: ''
+                      name: CategoryName
+                    python:
+                      description: ''
+                      name: categoryname
+                  protocol: {}
+                  type: string
+                serializedName: name
+              protocol: {}
+              serialization:
+                xml:
+                  attribute: false
+                  name: Category
+                  wrapped: false
+              serializationFormats:
+              - json
+              - xml
+              type: object
+              usage:
+              - input
+              - output
+            serializedName: category
+          - language:
+              default:
+                description: ''
+                name: name
+              python:
+                description: ''
+                name: name
+            protocol: {}
+            required: true
+            schema: &id059
+              apiVersions:
+              - version: 1.0.0
+              language:
+                default:
+                  description: ''
+                  name: PetName
+                python:
+                  description: ''
+                  name: petname
+              protocol: {}
+              type: string
+            serializedName: name
+          - language:
+              default:
+                description: ''
+                name: photo_urls
+              python:
+                description: ''
+                name: photo_urls
+            protocol: {}
+            required: true
+            schema: &id033
+              apiVersions:
+              - version: 1.0.0
+              elementType: &id060
+                apiVersions:
+                - version: 1.0.0
+                language:
+                  default:
+                    description: ''
+                    name: PetPhotoUrlsItem
+                  python:
+                    description: ''
+                    name: petphotourlsitem
+                protocol: {}
+                type: string
+              language:
+                default:
+                  description: Array of PetPhotoUrlsItem
+                  name: PetPhotoUrls
+                python:
+                  description: Array of PetPhotoUrlsItem.
+                  name: petphotourls
+              protocol: {}
+              serialization:
+                xml:
+                  attribute: false
+                  name: photoUrl
+                  wrapped: true
+              type: array
+            serializedName: photoUrls
+          - language:
+              default:
+                description: ''
+                name: tags
+              python:
+                description: ''
+                name: tags
+            protocol: {}
+            required: false
+            schema: &id034
+              apiVersions:
+              - version: 1.0.0
+              elementType: &id056
+                apiVersions:
+                - version: 1.0.0
+                language:
+                  default:
+                    description: ''
+                    name: Tag
+                    namespace: ''
+                  python:
+                    description: Tag.
+                    name: Tag
+                    namespace: ''
+                properties:
+                - language:
+                    default:
+                      description: ''
+                      name: id
+                    python:
+                      description: ''
+                      name: id
+                  protocol: {}
+                  schema: *id002
+                  serializedName: id
+                - language:
+                    default:
+                      description: ''
+                      name: name
+                    python:
+                      description: ''
+                      name: name
+                  protocol: {}
+                  schema: &id061
+                    apiVersions:
+                    - version: 1.0.0
+                    language:
+                      default:
+                        description: ''
+                        name: TagName
+                      python:
+                        description: ''
+                        name: tagname
+                    protocol: {}
+                    type: string
+                  serializedName: name
+                protocol: {}
+                serialization:
+                  xml:
+                    attribute: false
+                    name: Tag
+                    wrapped: false
+                serializationFormats:
+                - json
+                - xml
+                type: object
+                usage:
+                - input
+                - output
+              language:
+                default:
+                  description: Array of Tag
+                  name: PetTags
+                python:
+                  description: Array of Tag.
+                  name: pettags
+              protocol: {}
+              serialization:
+                xml:
+                  attribute: false
+                  name: tag
+                  wrapped: true
+              type: array
+            serializedName: tags
+          - language:
+              default:
+                description: pet status in the store
+                name: status
+              python:
+                description: pet status in the store.
+                name: status
+            protocol: {}
+            required: false
+            schema: &id045
+              apiVersions:
+              - version: 1.0.0
+              choiceType: *id003
+              choices:
+              - language:
+                  default:
+                    description: ''
+                    name: available
+                  python:
+                    description: ''
+                    name: available
+                value: available
+              - language:
+                  default:
+                    description: ''
+                    name: pending
+                  python:
+                    description: ''
+                    name: pending
+                value: pending
+              - language:
+                  default:
+                    description: ''
+                    name: sold
+                  python:
+                    description: ''
+                    name: sold
+                value: sold
+              language:
+                default:
+                  description: pet status in the store
+                  name: PetStatus
+                python:
+                  description: pet status in the store
+                  name: PetStatus
+              protocol: {}
+              type: choice
+            serializedName: status
+          protocol: {}
+          serialization:
+            xml:
+              attribute: false
+              name: Pet
+              wrapped: false
+          serializationFormats:
+          - json
+          - xml
+          type: object
+          usage:
+          - input
+          - output
+      protocol:
+        http:
+          knownMediaType: json
+          mediaTypes:
+          - application/json
+          method: post
+          path: /pet
+          uri: '{$host}'
+      signatureParameters:
+      - *id004
+    responses:
+    - language:
+        default:
+          description: ''
+          name: ''
+        python:
+          description: ''
+          name: ''
+      protocol:
+        http:
+          statusCodes:
+          - '405'
+    signatureParameters: []
+  - apiVersions:
+    - version: 1.0.0
+    language:
+      default:
+        description: Update an existing pet
+        name: update_pet
+        summary: Update an existing pet
+      python:
+        description: Update an existing pet.
+        name: update_pet
+        summary: Update an existing pet.
+    parameters:
+    - *id001
+    protocol: {}
+    requests:
+    - language:
+        default:
+          description: ''
+          name: ''
+        python:
+          description: ''
+          name: ''
+      parameters:
+      - implementation: Method
+        language:
+          default:
+            description: Body Parameter content-type
+            name: content_type
+            serializedName: Content-Type
+          python:
+            description: Body Parameter content-type.
+            name: content_type
+            serializedName: Content-Type
+        origin: modelerfour:synthesized/content-type
+        protocol:
+          http:
+            in: header
+        required: true
+        schema: *id005
+      - &id007
+        implementation: Method
+        language:
+          default:
+            description: Pet object that needs to be added to the store
+            name: body
+          python:
+            description: Pet object that needs to be added to the store.
+            name: body
+        protocol:
+          http:
+            in: body
+            style: json
+        required: true
+        schema: *id006
+      protocol:
+        http:
+          knownMediaType: json
+          mediaTypes:
+          - application/json
+          method: put
+          path: /pet
+          uri: '{$host}'
+      signatureParameters:
+      - *id007
+    responses:
+    - language:
+        default:
+          description: ''
+          name: ''
+        python:
+          description: ''
+          name: ''
+      protocol:
+        http:
+          statusCodes:
+          - '400'
+    - language:
+        default:
+          description: ''
+          name: ''
+        python:
+          description: ''
+          name: ''
+      protocol:
+        http:
+          statusCodes:
+          - '404'
+    - language:
+        default:
+          description: ''
+          name: ''
+        python:
+          description: ''
+          name: ''
+      protocol:
+        http:
+          statusCodes:
+          - '405'
+    signatureParameters: []
+  - apiVersions:
+    - version: 1.0.0
+    language:
+      default:
+        description: Multiple status values can be provided with comma separated strings
+        name: find_pets_by_status
+        summary: Finds Pets by status
+      python:
+        description: Multiple status values can be provided with comma separated strings.
+        name: find_pets_by_status
+        summary: Finds Pets by status.
+    parameters:
+    - *id001
+    - &id008
+      implementation: Method
+      language:
+        default:
+          description: Status values that need to be considered for filter
+          name: status
+          serializedName: status
+        python:
+          description: Status values that need to be considered for filter.
+          name: status
+          serializedName: status
+      protocol:
+        http:
+          in: query
+          style: form
+      required: true
+      schema: &id035
+        apiVersions:
+        - version: 1.0.0
+        elementType: &id046
+          apiVersions:
+          - version: 1.0.0
+          choiceType: *id003
+          choices:
+          - language:
+              default:
+                description: ''
+                name: available
+              python:
+                description: ''
+                name: available
+            value: available
+          - language:
+              default:
+                description: ''
+                name: pending
+              python:
+                description: ''
+                name: pending
+            value: pending
+          - language:
+              default:
+                description: ''
+                name: sold
+              python:
+                description: ''
+                name: sold
+            value: sold
+          defaultValue: available
+          language:
+            default:
+              description: ''
+              name: Get0ItemsItem
+            python:
+              description: ''
+              name: Get0ItemsItem
+          protocol: {}
+          type: choice
+        language:
+          default:
+            description: Array of Get0ItemsItem
+            name: ArrayOfGet0ItemsItem
+          python:
+            description: Array of Get0ItemsItem.
+            name: arrayofget0itemsitem
+        protocol: {}
+        type: array
+    protocol: {}
+    requests:
+    - language:
+        default:
+          description: ''
+          name: ''
+        python:
+          description: ''
+          name: ''
+      protocol:
+        http:
+          method: get
+          path: /pet/findByStatus
+          uri: '{$host}'
+    responses:
+    - language:
+        default:
+          description: ''
+          name: ''
+        python:
+          description: ''
+          name: ''
+      protocol:
+        http:
+          knownMediaType: json
+          mediaTypes:
+          - application/json
+          statusCodes:
+          - '200'
+      schema: &id036
+        apiVersions:
+        - version: 1.0.0
+        elementType: *id006
+        language:
+          default:
+            description: Array of Pet
+            name: ArrayOfPet
+          python:
+            description: Array of Pet.
+            name: arrayofpet
+        protocol: {}
+        type: array
+    - language:
+        default:
+          description: ''
+          name: ''
+        python:
+          description: ''
+          name: ''
+      protocol:
+        http:
+          knownMediaType: xml
+          mediaTypes:
+          - application/xml
+          statusCodes:
+          - '200'
+      schema: &id037
+        apiVersions:
+        - version: 1.0.0
+        elementType: *id006
+        language:
+          default:
+            description: Array of Pet
+            name: ArrayOfPet
+          python:
+            description: Array of Pet.
+            name: arrayofpet
+        protocol: {}
+        type: array
+    - language:
+        default:
+          description: ''
+          name: ''
+        python:
+          description: ''
+          name: ''
+      protocol:
+        http:
+          statusCodes:
+          - '400'
+    signatureParameters:
+    - *id008
+  - apiVersions:
+    - version: 1.0.0
+    language:
+      default:
+        description: Muliple tags can be provided with comma separated strings. Use\
+          tag1, tag2, tag3 for testing.
+        name: find_pets_by_tags
+        summary: Finds Pets by tags
+      python:
+        description: Muliple tags can be provided with comma separated strings. Use\
+          tag1, tag2, tag3 for testing.
+        name: find_pets_by_tags
+        summary: Finds Pets by tags.
+    parameters:
+    - *id001
+    - &id009
+      implementation: Method
+      language:
+        default:
+          description: Tags to filter by
+          name: tags
+          serializedName: tags
+        python:
+          description: Tags to filter by.
+          name: tags
+          serializedName: tags
+      protocol:
+        http:
+          in: query
+          style: form
+      required: true
+      schema: &id038
+        apiVersions:
+        - version: 1.0.0
+        elementType: &id014
+          apiVersions:
+          - version: 1.0.0
+          language:
+            default:
+              description: ''
+              name: String
+            python:
+              description: ''
+              name: string
+          protocol: {}
+          type: string
+        language:
+          default:
+            description: Array of String
+            name: ArrayOfString
+          python:
+            description: Array of String.
+            name: arrayofstring
+        protocol: {}
+        type: array
+    protocol: {}
+    requests:
+    - language:
+        default:
+          description: ''
+          name: ''
+        python:
+          description: ''
+          name: ''
+      protocol:
+        http:
+          method: get
+          path: /pet/findByTags
+          uri: '{$host}'
+    responses:
+    - language:
+        default:
+          description: ''
+          name: ''
+        python:
+          description: ''
+          name: ''
+      protocol:
+        http:
+          knownMediaType: json
+          mediaTypes:
+          - application/json
+          statusCodes:
+          - '200'
+      schema: &id039
+        apiVersions:
+        - version: 1.0.0
+        elementType: *id006
+        language:
+          default:
+            description: Array of Pet
+            name: ArrayOfPet
+          python:
+            description: Array of Pet.
+            name: arrayofpet
+        protocol: {}
+        type: array
+    - language:
+        default:
+          description: ''
+          name: ''
+        python:
+          description: ''
+          name: ''
+      protocol:
+        http:
+          knownMediaType: xml
+          mediaTypes:
+          - application/xml
+          statusCodes:
+          - '200'
+      schema: &id040
+        apiVersions:
+        - version: 1.0.0
+        elementType: *id006
+        language:
+          default:
+            description: Array of Pet
+            name: ArrayOfPet
+          python:
+            description: Array of Pet.
+            name: arrayofpet
+        protocol: {}
+        type: array
+    - language:
+        default:
+          description: ''
+          name: ''
+        python:
+          description: ''
+          name: ''
+      protocol:
+        http:
+          statusCodes:
+          - '400'
+    signatureParameters:
+    - *id009
+  - apiVersions:
+    - version: 1.0.0
+    language:
+      default:
+        description: Returns a single pet
+        name: get_pet_by_id
+        summary: Find pet by ID
+      python:
+        description: Returns a single pet.
+        name: get_pet_by_id
+        summary: Find pet by ID.
+    parameters:
+    - *id001
+    - &id010
+      implementation: Method
+      language:
+        default:
+          description: ID of pet to return
+          name: pet_id
+          serializedName: petId
+        python:
+          description: ID of pet to return.
+          name: pet_id
+          serializedName: petId
+      protocol:
+        http:
+          in: path
+      required: true
+      schema: &id011
+        apiVersions:
+        - version: 1.0.0
+        language:
+          default:
+            description: ''
+            name: Integer
+          python:
+            description: ''
+            name: integer
+        precision: 64
+        protocol: {}
+        type: integer
+    protocol: {}
+    requests:
+    - language:
+        default:
+          description: ''
+          name: ''
+        python:
+          description: ''
+          name: ''
+      protocol:
+        http:
+          method: get
+          path: /pet/{petId}
+          uri: '{$host}'
+    responses:
+    - language:
+        default:
+          description: ''
+          name: ''
+        python:
+          description: ''
+          name: ''
+      protocol:
+        http:
+          knownMediaType: json
+          mediaTypes:
+          - application/json
+          statusCodes:
+          - '200'
+      schema: *id006
+    - language:
+        default:
+          description: ''
+          name: ''
+        python:
+          description: ''
+          name: ''
+      protocol:
+        http:
+          knownMediaType: xml
+          mediaTypes:
+          - application/xml
+          statusCodes:
+          - '200'
+      schema: *id006
+    - language:
+        default:
+          description: ''
+          name: ''
+        python:
+          description: ''
+          name: ''
+      protocol:
+        http:
+          statusCodes:
+          - '400'
+    - language:
+        default:
+          description: ''
+          name: ''
+        python:
+          description: ''
+          name: ''
+      protocol:
+        http:
+          statusCodes:
+          - '404'
+    signatureParameters:
+    - *id010
+  - apiVersions:
+    - version: 1.0.0
+    language:
+      default:
+        description: Updates a pet in the store with form data
+        name: update_pet_with_form
+        summary: Updates a pet in the store with form data
+      python:
+        description: Updates a pet in the store with form data.
+        name: update_pet_with_form
+        summary: Updates a pet in the store with form data.
+    parameters:
+    - *id001
+    - &id013
+      implementation: Method
+      language:
+        default:
+          description: ID of pet that needs to be updated
+          name: pet_id
+          serializedName: petId
+        python:
+          description: ID of pet that needs to be updated.
+          name: pet_id
+          serializedName: petId
+      protocol:
+        http:
+          in: path
+      required: true
+      schema: *id011
+    protocol: {}
+    requests:
+    - language:
+        default:
+          description: ''
+          name: ''
+        python:
+          description: ''
+          name: ''
+      parameters:
+      - implementation: Method
+        language:
+          default:
+            description: Body Parameter content-type
+            name: content_type
+            serializedName: Content-Type
+          python:
+            description: Body Parameter content-type.
+            name: content_type
+            serializedName: Content-Type
+        origin: modelerfour:synthesized/content-type
+        protocol:
+          http:
+            in: header
+        required: true
+        schema: &id048
+          language:
+            default:
+              description: Content Type 'application/x-www-form-urlencoded'
+              name: application_x_www_form_urlencoded
+            python:
+              description: Content Type 'application/x-www-form-urlencoded'.
+              name: application_x_www_form_urlencoded
+          protocol: {}
+          type: constant
+          value:
+            value: application/x-www-form-urlencoded
+          valueType: *id003
+      - &id012
+        implementation: Method
+        language:
+          default:
+            description: ''
+            name: status
+          python:
+            description: ''
+            name: status
+        protocol:
+          http:
+            in: body
+            style: form
+        required: false
+        schema: &id057
+          apiVersions:
+          - version: 1.0.0
+          language:
+            default:
+              description: ''
+              name: PathsN18Gb4PetPetidPostRequestbodyContentApplicationXWwwFormUrlencodedSchema
+              namespace: ''
+            python:
+              description: PathsN18Gb4PetPetidPostRequestbodyContentApplicationXWwwFormUrlencodedSchema.
+              name: PathsN18Gb4PetPetidPostRequestbodyContentApplicationXWwwFormUrlencodedSchema
+              namespace: ''
+          properties:
+          - language:
+              default:
+                description: Updated name of the pet
+                name: name
+              python:
+                description: Updated name of the pet.
+                name: name
+            protocol: {}
+            schema: &id062
+              apiVersions:
+              - version: 1.0.0
+              language:
+                default:
+                  description: Updated name of the pet
+                  name: PostContentSchemaName
+                python:
+                  description: Updated name of the pet.
+                  name: postcontentschemaname
+              protocol: {}
+              type: string
+            serializedName: name
+          - language:
+              default:
+                description: Updated status of the pet
+                name: status
+              python:
+                description: Updated status of the pet.
+                name: status
+            protocol: {}
+            schema: &id063
+              apiVersions:
+              - version: 1.0.0
+              language:
+                default:
+                  description: Updated status of the pet
+                  name: PostContentSchemaStatus
+                python:
+                  description: Updated status of the pet.
+                  name: postcontentschemastatus
+              protocol: {}
+              type: string
+            serializedName: status
+          protocol: {}
+          serializationFormats:
+          - form
+          type: object
+          usage:
+          - input
+      protocol:
+        http:
+          knownMediaType: form
+          mediaTypes:
+          - application/x-www-form-urlencoded
+          method: post
+          path: /pet/{petId}
+          uri: '{$host}'
+      signatureParameters:
+      - *id012
+    responses:
+    - language:
+        default:
+          description: ''
+          name: ''
+        python:
+          description: ''
+          name: ''
+      protocol:
+        http:
+          statusCodes:
+          - '405'
+    signatureParameters:
+    - *id013
+  - apiVersions:
+    - version: 1.0.0
+    language:
+      default:
+        description: Deletes a pet
+        name: delete_pet
+        summary: Deletes a pet
+      python:
+        description: Deletes a pet.
+        name: delete_pet
+        summary: Deletes a pet.
+    parameters:
+    - *id001
+    - &id015
+      implementation: Method
+      language:
+        default:
+          description: ''
+          name: api_key
+          serializedName: api_key
+        python:
+          description: ''
+          name: api_key
+          serializedName: api_key
+      protocol:
+        http:
+          in: header
+      schema: *id014
+    - &id016
+      implementation: Method
+      language:
+        default:
+          description: Pet id to delete
+          name: pet_id
+          serializedName: petId
+        python:
+          description: Pet id to delete.
+          name: pet_id
+          serializedName: petId
+      protocol:
+        http:
+          in: path
+      required: true
+      schema: *id011
+    protocol: {}
+    requests:
+    - language:
+        default:
+          description: ''
+          name: ''
+        python:
+          description: ''
+          name: ''
+      protocol:
+        http:
+          method: delete
+          path: /pet/{petId}
+          uri: '{$host}'
+    responses:
+    - language:
+        default:
+          description: ''
+          name: ''
+        python:
+          description: ''
+          name: ''
+      protocol:
+        http:
+          statusCodes:
+          - '400'
+    - language:
+        default:
+          description: ''
+          name: ''
+        python:
+          description: ''
+          name: ''
+      protocol:
+        http:
+          statusCodes:
+          - '404'
+    signatureParameters:
+    - *id015
+    - *id016
+  - apiVersions:
+    - version: 1.0.0
+    language:
+      default:
+        description: Returns a map of status codes to quantities
+        name: get_inventory
+        summary: Returns pet inventories by status
+      python:
+        description: Returns a map of status codes to quantities.
+        name: get_inventory
+        summary: Returns pet inventories by status.
+    parameters:
+    - *id001
+    protocol: {}
+    requests:
+    - language:
+        default:
+          description: ''
+          name: ''
+        python:
+          description: ''
+          name: ''
+      protocol:
+        http:
+          method: get
+          path: /store/inventory
+          uri: '{$host}'
+    responses:
+    - language:
+        default:
+          description: ''
+          name: ''
+        python:
+          description: ''
+          name: ''
+      protocol:
+        http:
+          knownMediaType: json
+          mediaTypes:
+          - application/json
+          statusCodes:
+          - '200'
+      schema: &id050
+        elementType: &id025
+          apiVersions:
+          - version: 1.0.0
+          language:
+            default:
+              description: ''
+              header: X-Rate-Limit
+              name: Integer
+            python:
+              description: ''
+              header: X-Rate-Limit
+              name: integer
+          precision: 32
+          protocol: {}
+          type: integer
+        language:
+          default:
+            description: Dictionary of :code:`<integer>`
+            name: DictionaryOfInteger
+          python:
+            description: Dictionary of :code:`<integer>`.
+            name: dictionaryofinteger
+        protocol: {}
+        type: dictionary
+    signatureParameters: []
+  - apiVersions:
+    - version: 1.0.0
+    language:
+      default:
+        description: Place an order for a pet
+        name: place_order
+        summary: Place an order for a pet
+      python:
+        description: Place an order for a pet.
+        name: place_order
+        summary: Place an order for a pet.
+    parameters:
+    - *id001
+    protocol: {}
+    requests:
+    - language:
+        default:
+          description: ''
+          name: ''
+        python:
+          description: ''
+          name: ''
+      parameters:
+      - implementation: Method
+        language:
+          default:
+            description: Body Parameter content-type
+            name: content_type
+            serializedName: Content-Type
+          python:
+            description: Body Parameter content-type.
+            name: content_type
+            serializedName: Content-Type
+        origin: modelerfour:synthesized/content-type
+        protocol:
+          http:
+            in: header
+        required: true
+        schema: *id005
+      - &id017
+        implementation: Method
+        language:
+          default:
+            description: order placed for purchasing the pet
+            name: body
+          python:
+            description: order placed for purchasing the pet.
+            name: body
+        protocol:
+          http:
+            in: body
+            style: json
+        required: true
+        schema: &id018
+          apiVersions:
+          - version: 1.0.0
+          language:
+            default:
+              description: ''
+              name: Order
+              namespace: ''
+            python:
+              description: Order.
+              name: Order
+              namespace: ''
+          properties:
+          - language:
+              default:
+                description: ''
+                name: id
+              python:
+                description: ''
+                name: id
+            protocol: {}
+            schema: *id002
+            serializedName: id
+          - language:
+              default:
+                description: ''
+                name: pet_id
+              python:
+                description: ''
+                name: pet_id
+            protocol: {}
+            schema: *id002
+            serializedName: petId
+          - language:
+              default:
+                description: ''
+                name: quantity
+              python:
+                description: ''
+                name: quantity
+            protocol: {}
+            schema: &id051
+              language:
+                default:
+                  description: ''
+                  name: Integer
+                python:
+                  description: ''
+                  name: integer
+              precision: 32
+              protocol: {}
+              type: integer
+            serializedName: quantity
+          - language:
+              default:
+                description: ''
+                name: ship_date
+              python:
+                description: ''
+                name: ship_date
+            protocol: {}
+            schema: &id049
+              apiVersions:
+              - version: 1.0.0
+              format: date-time
+              language:
+                default:
+                  description: ''
+                  name: OrderShipDate
+                python:
+                  description: ''
+                  name: ordershipdate
+              protocol: {}
+              type: date-time
+            serializedName: shipDate
+          - language:
+              default:
+                description: Order Status
+                name: status
+              python:
+                description: Order Status.
+                name: status
+            protocol: {}
+            schema: &id047
+              apiVersions:
+              - version: 1.0.0
+              choiceType: *id003
+              choices:
+              - language:
+                  default:
+                    description: ''
+                    name: placed
+                  python:
+                    description: ''
+                    name: placed
+                value: placed
+              - language:
+                  default:
+                    description: ''
+                    name: approved
+                  python:
+                    description: ''
+                    name: approved
+                value: approved
+              - language:
+                  default:
+                    description: ''
+                    name: delivered
+                  python:
+                    description: ''
+                    name: delivered
+                value: delivered
+              language:
+                default:
+                  description: Order Status
+                  name: OrderStatus
+                python:
+                  description: Order Status
+                  name: OrderStatus
+              protocol: {}
+              type: choice
+            serializedName: status
+          - language:
+              default:
+                description: ''
+                name: complete
+              python:
+                description: ''
+                name: complete
+            protocol: {}
+            schema: &id043
+              defaultValue: false
+              language:
+                default:
+                  description: ''
+                  name: Boolean
+                python:
+                  description: ''
+                  name: boolean
+              protocol: {}
+              type: boolean
+            serializedName: complete
+          protocol: {}
+          serialization:
+            xml:
+              attribute: false
+              name: Order
+              wrapped: false
+          serializationFormats:
+          - json
+          - xml
+          type: object
+          usage:
+          - input
+          - output
+      protocol:
+        http:
+          knownMediaType: json
+          mediaTypes:
+          - application/json
+          method: post
+          path: /store/order
+          uri: '{$host}'
+      signatureParameters:
+      - *id017
+    responses:
+    - language:
+        default:
+          description: ''
+          name: ''
+        python:
+          description: ''
+          name: ''
+      protocol:
+        http:
+          knownMediaType: json
+          mediaTypes:
+          - application/json
+          statusCodes:
+          - '200'
+      schema: *id018
+    - language:
+        default:
+          description: ''
+          name: ''
+        python:
+          description: ''
+          name: ''
+      protocol:
+        http:
+          knownMediaType: xml
+          mediaTypes:
+          - application/xml
+          statusCodes:
+          - '200'
+      schema: *id018
+    - language:
+        default:
+          description: ''
+          name: ''
+        python:
+          description: ''
+          name: ''
+      protocol:
+        http:
+          statusCodes:
+          - '400'
+    signatureParameters: []
+  - apiVersions:
+    - version: 1.0.0
+    language:
+      default:
+        description: For valid response try integer IDs with value >= 1 and <= 10.\
+          Other values will generated exceptions
+        name: get_order_by_id
+        summary: Find purchase order by ID
+      python:
+        description: For valid response try integer IDs with value >= 1 and <= 10.\
+          Other values will generated exceptions.
+        name: get_order_by_id
+        summary: Find purchase order by ID.
+    parameters:
+    - *id001
+    - &id019
+      implementation: Method
+      language:
+        default:
+          description: ID of pet that needs to be fetched
+          name: order_id
+          serializedName: orderId
+        python:
+          description: ID of pet that needs to be fetched.
+          name: order_id
+          serializedName: orderId
+      protocol:
+        http:
+          in: path
+      required: true
+      schema: &id052
+        apiVersions:
+        - version: 1.0.0
+        language:
+          default:
+            description: ''
+            name: Integer
+          python:
+            description: ''
+            name: integer
+        maximum: 10
+        minimum: 1
+        precision: 64
+        protocol: {}
+        type: integer
+    protocol: {}
+    requests:
+    - language:
+        default:
+          description: ''
+          name: ''
+        python:
+          description: ''
+          name: ''
+      protocol:
+        http:
+          method: get
+          path: /store/order/{orderId}
+          uri: '{$host}'
+    responses:
+    - language:
+        default:
+          description: ''
+          name: ''
+        python:
+          description: ''
+          name: ''
+      protocol:
+        http:
+          knownMediaType: json
+          mediaTypes:
+          - application/json
+          statusCodes:
+          - '200'
+      schema: *id018
+    - language:
+        default:
+          description: ''
+          name: ''
+        python:
+          description: ''
+          name: ''
+      protocol:
+        http:
+          knownMediaType: xml
+          mediaTypes:
+          - application/xml
+          statusCodes:
+          - '200'
+      schema: *id018
+    - language:
+        default:
+          description: ''
+          name: ''
+        python:
+          description: ''
+          name: ''
+      protocol:
+        http:
+          statusCodes:
+          - '400'
+    - language:
+        default:
+          description: ''
+          name: ''
+        python:
+          description: ''
+          name: ''
+      protocol:
+        http:
+          statusCodes:
+          - '404'
+    signatureParameters:
+    - *id019
+  - apiVersions:
+    - version: 1.0.0
+    language:
+      default:
+        description: For valid response try integer IDs with positive integer value.\
+          Negative or non-integer values will generate API errors
+        name: delete_order
+        summary: Delete purchase order by ID
+      python:
+        description: For valid response try integer IDs with positive integer value.\
+          Negative or non-integer values will generate API errors.
+        name: delete_order
+        summary: Delete purchase order by ID.
+    parameters:
+    - *id001
+    - &id020
+      implementation: Method
+      language:
+        default:
+          description: ID of the order that needs to be deleted
+          name: order_id
+          serializedName: orderId
+        python:
+          description: ID of the order that needs to be deleted.
+          name: order_id
+          serializedName: orderId
+      protocol:
+        http:
+          in: path
+      required: true
+      schema: &id053
+        apiVersions:
+        - version: 1.0.0
+        language:
+          default:
+            description: ''
+            name: Integer
+          python:
+            description: ''
+            name: integer
+        minimum: 1
+        precision: 64
+        protocol: {}
+        type: integer
+    protocol: {}
+    requests:
+    - language:
+        default:
+          description: ''
+          name: ''
+        python:
+          description: ''
+          name: ''
+      protocol:
+        http:
+          method: delete
+          path: /store/order/{orderId}
+          uri: '{$host}'
+    responses:
+    - language:
+        default:
+          description: ''
+          name: ''
+        python:
+          description: ''
+          name: ''
+      protocol:
+        http:
+          statusCodes:
+          - '400'
+    - language:
+        default:
+          description: ''
+          name: ''
+        python:
+          description: ''
+          name: ''
+      protocol:
+        http:
+          statusCodes:
+          - '404'
+    signatureParameters:
+    - *id020
+  - apiVersions:
+    - version: 1.0.0
+    exceptions:
+    - language:
+        default:
+          description: ''
+          name: ''
+        python:
+          description: ''
+          name: ''
+      protocol:
+        http:
+          statusCodes:
+          - default
+    language:
+      default:
+        description: This can only be done by the logged in user.
+        name: create_user
+        summary: Create user
+      python:
+        description: This can only be done by the logged in user.
+        name: create_user
+        summary: Create user.
+    parameters:
+    - *id001
+    protocol: {}
+    requests:
+    - language:
+        default:
+          description: ''
+          name: ''
+        python:
+          description: ''
+          name: ''
+      parameters:
+      - implementation: Method
+        language:
+          default:
+            description: Body Parameter content-type
+            name: content_type
+            serializedName: Content-Type
+          python:
+            description: Body Parameter content-type.
+            name: content_type
+            serializedName: Content-Type
+        origin: modelerfour:synthesized/content-type
+        protocol:
+          http:
+            in: header
+        required: true
+        schema: *id005
+      - &id021
+        implementation: Method
+        language:
+          default:
+            description: Created user object
+            name: body
+          python:
+            description: Created user object.
+            name: body
+        protocol:
+          http:
+            in: body
+            style: json
+        required: true
+        schema: &id022
+          apiVersions:
+          - version: 1.0.0
+          language:
+            default:
+              description: ''
+              name: User
+              namespace: ''
+            python:
+              description: User.
+              name: User
+              namespace: ''
+          properties:
+          - language:
+              default:
+                description: ''
+                name: id
+              python:
+                description: ''
+                name: id
+            protocol: {}
+            schema: *id002
+            serializedName: id
+          - language:
+              default:
+                description: ''
+                name: username
+              python:
+                description: ''
+                name: username
+            protocol: {}
+            schema: &id064
+              apiVersions:
+              - version: 1.0.0
+              language:
+                default:
+                  description: ''
+                  name: UserUsername
+                python:
+                  description: ''
+                  name: userusername
+              protocol: {}
+              type: string
+            serializedName: username
+          - language:
+              default:
+                description: ''
+                name: first_name
+              python:
+                description: ''
+                name: first_name
+            protocol: {}
+            schema: &id065
+              apiVersions:
+              - version: 1.0.0
+              language:
+                default:
+                  description: ''
+                  name: UserFirstName
+                python:
+                  description: ''
+                  name: userfirstname
+              protocol: {}
+              type: string
+            serializedName: firstName
+          - language:
+              default:
+                description: ''
+                name: last_name
+              python:
+                description: ''
+                name: last_name
+            protocol: {}
+            schema: &id066
+              apiVersions:
+              - version: 1.0.0
+              language:
+                default:
+                  description: ''
+                  name: UserLastName
+                python:
+                  description: ''
+                  name: userlastname
+              protocol: {}
+              type: string
+            serializedName: lastName
+          - language:
+              default:
+                description: ''
+                name: email
+              python:
+                description: ''
+                name: email
+            protocol: {}
+            schema: &id067
+              apiVersions:
+              - version: 1.0.0
+              language:
+                default:
+                  description: ''
+                  name: UserEmail
+                python:
+                  description: ''
+                  name: useremail
+              protocol: {}
+              type: string
+            serializedName: email
+          - language:
+              default:
+                description: ''
+                name: password
+              python:
+                description: ''
+                name: password
+            protocol: {}
+            schema: &id068
+              apiVersions:
+              - version: 1.0.0
+              language:
+                default:
+                  description: ''
+                  name: UserPassword
+                python:
+                  description: ''
+                  name: userpassword
+              protocol: {}
+              type: string
+            serializedName: password
+          - language:
+              default:
+                description: ''
+                name: phone
+              python:
+                description: ''
+                name: phone
+            protocol: {}
+            schema: &id069
+              apiVersions:
+              - version: 1.0.0
+              language:
+                default:
+                  description: ''
+                  name: UserPhone
+                python:
+                  description: ''
+                  name: userphone
+              protocol: {}
+              type: string
+            serializedName: phone
+          - language:
+              default:
+                description: User Status
+                name: user_status
+              python:
+                description: User Status.
+                name: user_status
+            protocol: {}
+            schema: &id054
+              language:
+                default:
+                  description: User Status
+                  name: Integer
+                python:
+                  description: User Status.
+                  name: integer
+              precision: 32
+              protocol: {}
+              type: integer
+            serializedName: userStatus
+          protocol: {}
+          serialization:
+            xml:
+              attribute: false
+              name: User
+              wrapped: false
+          serializationFormats:
+          - json
+          - xml
+          type: object
+          usage:
+          - input
+          - output
+      protocol:
+        http:
+          knownMediaType: json
+          mediaTypes:
+          - application/json
+          method: post
+          path: /user
+          uri: '{$host}'
+      signatureParameters:
+      - *id021
+    signatureParameters: []
+  - apiVersions:
+    - version: 1.0.0
+    exceptions:
+    - language:
+        default:
+          description: ''
+          name: ''
+        python:
+          description: ''
+          name: ''
+      protocol:
+        http:
+          statusCodes:
+          - default
+    language:
+      default:
+        description: Creates list of users with given input array
+        name: create_users_with_array_input
+        summary: Creates list of users with given input array
+      python:
+        description: Creates list of users with given input array.
+        name: create_users_with_array_input
+        summary: Creates list of users with given input array.
+    parameters:
+    - *id001
+    protocol: {}
+    requests:
+    - language:
+        default:
+          description: ''
+          name: ''
+        python:
+          description: ''
+          name: ''
+      parameters:
+      - implementation: Method
+        language:
+          default:
+            description: Body Parameter content-type
+            name: content_type
+            serializedName: Content-Type
+          python:
+            description: Body Parameter content-type.
+            name: content_type
+            serializedName: Content-Type
+        origin: modelerfour:synthesized/content-type
+        protocol:
+          http:
+            in: header
+        required: true
+        schema: *id005
+      - &id023
+        implementation: Method
+        language:
+          default:
+            description: List of user object
+            name: body
+          python:
+            description: List of user object.
+            name: body
+        protocol:
+          http:
+            in: body
+            style: json
+        required: true
+        schema: &id041
+          apiVersions:
+          - version: 1.0.0
+          elementType: *id022
+          language:
+            default:
+              description: Array of User
+              name: ArrayOfUser
+            python:
+              description: Array of User.
+              name: arrayofuser
+          protocol: {}
+          type: array
+      protocol:
+        http:
+          knownMediaType: json
+          mediaTypes:
+          - application/json
+          method: post
+          path: /user/createWithArray
+          uri: '{$host}'
+      signatureParameters:
+      - *id023
+    signatureParameters: []
+  - apiVersions:
+    - version: 1.0.0
+    exceptions:
+    - language:
+        default:
+          description: ''
+          name: ''
+        python:
+          description: ''
+          name: ''
+      protocol:
+        http:
+          statusCodes:
+          - default
+    language:
+      default:
+        description: Creates list of users with given input array
+        name: create_users_with_list_input
+        summary: Creates list of users with given input array
+      python:
+        description: Creates list of users with given input array.
+        name: create_users_with_list_input
+        summary: Creates list of users with given input array.
+    parameters:
+    - *id001
+    protocol: {}
+    requests:
+    - language:
+        default:
+          description: ''
+          name: ''
+        python:
+          description: ''
+          name: ''
+      parameters:
+      - implementation: Method
+        language:
+          default:
+            description: Body Parameter content-type
+            name: content_type
+            serializedName: Content-Type
+          python:
+            description: Body Parameter content-type.
+            name: content_type
+            serializedName: Content-Type
+        origin: modelerfour:synthesized/content-type
+        protocol:
+          http:
+            in: header
+        required: true
+        schema: *id005
+      - &id024
+        implementation: Method
+        language:
+          default:
+            description: List of user object
+            name: body
+          python:
+            description: List of user object.
+            name: body
+        protocol:
+          http:
+            in: body
+            style: json
+        required: true
+        schema: &id042
+          apiVersions:
+          - version: 1.0.0
+          elementType: *id022
+          language:
+            default:
+              description: Array of User
+              name: ArrayOfUser
+            python:
+              description: Array of User.
+              name: arrayofuser
+          protocol: {}
+          type: array
+      protocol:
+        http:
+          knownMediaType: json
+          mediaTypes:
+          - application/json
+          method: post
+          path: /user/createWithList
+          uri: '{$host}'
+      signatureParameters:
+      - *id024
+    signatureParameters: []
+  - apiVersions:
+    - version: 1.0.0
+    language:
+      default:
+        description: Logs user into the system
+        name: login_user
+        summary: Logs user into the system
+      python:
+        description: Logs user into the system.
+        name: login_user
+        summary: Logs user into the system.
+    parameters:
+    - *id001
+    - &id027
+      implementation: Method
+      language:
+        default:
+          description: The user name for login
+          name: username
+          serializedName: username
+        python:
+          description: The user name for login.
+          name: username
+          serializedName: username
+      protocol:
+        http:
+          in: query
+      required: true
+      schema: *id014
+    - &id028
+      implementation: Method
+      language:
+        default:
+          description: The password for login in clear text
+          name: password
+          serializedName: password
+        python:
+          description: The password for login in clear text.
+          name: password
+          serializedName: password
+      protocol:
+        http:
+          in: query
+      required: true
+      schema: *id014
+    protocol: {}
+    requests:
+    - language:
+        default:
+          description: ''
+          name: ''
+        python:
+          description: ''
+          name: ''
+      protocol:
+        http:
+          method: get
+          path: /user/login
+          uri: '{$host}'
+    responses:
+    - language:
+        default:
+          description: ''
+          name: ''
+        python:
+          description: ''
+          name: ''
+      protocol:
+        http:
+          headers:
+          - header: X-Rate-Limit
+            schema: *id025
+          - header: X-Expires-After
+            schema: &id026
+              apiVersions:
+              - version: 1.0.0
+              format: date-time
+              language:
+                default:
+                  description: ''
+                  header: X-Expires-After
+                  name: DateTime
+                python:
+                  description: ''
+                  header: X-Expires-After
+                  name: datetime
+              protocol: {}
+              type: date-time
+          knownMediaType: json
+          mediaTypes:
+          - application/json
+          statusCodes:
+          - '200'
+      schema: *id014
+    - language:
+        default:
+          description: ''
+          name: ''
+        python:
+          description: ''
+          name: ''
+      protocol:
+        http:
+          headers:
+          - header: X-Rate-Limit
+            schema: *id025
+          - header: X-Expires-After
+            schema: *id026
+          knownMediaType: xml
+          mediaTypes:
+          - application/xml
+          statusCodes:
+          - '200'
+      schema: *id014
+    - language:
+        default:
+          description: ''
+          name: ''
+        python:
+          description: ''
+          name: ''
+      protocol:
+        http:
+          statusCodes:
+          - '400'
+    signatureParameters:
+    - *id027
+    - *id028
+  - apiVersions:
+    - version: 1.0.0
+    exceptions:
+    - language:
+        default:
+          description: ''
+          name: ''
+        python:
+          description: ''
+          name: ''
+      protocol:
+        http:
+          statusCodes:
+          - default
+    language:
+      default:
+        description: Logs out current logged in user session
+        name: logout_user
+        summary: Logs out current logged in user session
+      python:
+        description: Logs out current logged in user session.
+        name: logout_user
+        summary: Logs out current logged in user session.
+    parameters:
+    - *id001
+    protocol: {}
+    requests:
+    - language:
+        default:
+          description: ''
+          name: ''
+        python:
+          description: ''
+          name: ''
+      protocol:
+        http:
+          method: get
+          path: /user/logout
+          uri: '{$host}'
+    signatureParameters: []
+  - apiVersions:
+    - version: 1.0.0
+    language:
+      default:
+        description: Get user by user name
+        name: get_user_by_name
+        summary: Get user by user name
+      python:
+        description: Get user by user name.
+        name: get_user_by_name
+        summary: Get user by user name.
+    parameters:
+    - *id001
+    - &id029
+      implementation: Method
+      language:
+        default:
+          description: The name that needs to be fetched. Use user1 for testing.
+          name: username
+          serializedName: username
+        python:
+          description: The name that needs to be fetched. Use user1 for testing.
+          name: username
+          serializedName: username
+      protocol:
+        http:
+          in: path
+      required: true
+      schema: *id014
+    protocol: {}
+    requests:
+    - language:
+        default:
+          description: ''
+          name: ''
+        python:
+          description: ''
+          name: ''
+      protocol:
+        http:
+          method: get
+          path: /user/{username}
+          uri: '{$host}'
+    responses:
+    - language:
+        default:
+          description: ''
+          name: ''
+        python:
+          description: ''
+          name: ''
+      protocol:
+        http:
+          knownMediaType: json
+          mediaTypes:
+          - application/json
+          statusCodes:
+          - '200'
+      schema: *id022
+    - language:
+        default:
+          description: ''
+          name: ''
+        python:
+          description: ''
+          name: ''
+      protocol:
+        http:
+          knownMediaType: xml
+          mediaTypes:
+          - application/xml
+          statusCodes:
+          - '200'
+      schema: *id022
+    - language:
+        default:
+          description: ''
+          name: ''
+        python:
+          description: ''
+          name: ''
+      protocol:
+        http:
+          statusCodes:
+          - '400'
+    - language:
+        default:
+          description: ''
+          name: ''
+        python:
+          description: ''
+          name: ''
+      protocol:
+        http:
+          statusCodes:
+          - '404'
+    signatureParameters:
+    - *id029
+  - apiVersions:
+    - version: 1.0.0
+    language:
+      default:
+        description: This can only be done by the logged in user.
+        name: update_user
+        summary: Updated user
+      python:
+        description: This can only be done by the logged in user.
+        name: update_user
+        summary: Updated user.
+    parameters:
+    - *id001
+    - &id031
+      implementation: Method
+      language:
+        default:
+          description: name that need to be updated
+          name: username
+          serializedName: username
+        python:
+          description: name that need to be updated.
+          name: username
+          serializedName: username
+      protocol:
+        http:
+          in: path
+      required: true
+      schema: *id014
+    protocol: {}
+    requests:
+    - language:
+        default:
+          description: ''
+          name: ''
+        python:
+          description: ''
+          name: ''
+      parameters:
+      - implementation: Method
+        language:
+          default:
+            description: Body Parameter content-type
+            name: content_type
+            serializedName: Content-Type
+          python:
+            description: Body Parameter content-type.
+            name: content_type
+            serializedName: Content-Type
+        origin: modelerfour:synthesized/content-type
+        protocol:
+          http:
+            in: header
+        required: true
+        schema: *id005
+      - &id030
+        implementation: Method
+        language:
+          default:
+            description: Updated user object
+            name: body
+          python:
+            description: Updated user object.
+            name: body
+        protocol:
+          http:
+            in: body
+            style: json
+        required: true
+        schema: *id022
+      protocol:
+        http:
+          knownMediaType: json
+          mediaTypes:
+          - application/json
+          method: put
+          path: /user/{username}
+          uri: '{$host}'
+      signatureParameters:
+      - *id030
+    responses:
+    - language:
+        default:
+          description: ''
+          name: ''
+        python:
+          description: ''
+          name: ''
+      protocol:
+        http:
+          statusCodes:
+          - '400'
+    - language:
+        default:
+          description: ''
+          name: ''
+        python:
+          description: ''
+          name: ''
+      protocol:
+        http:
+          statusCodes:
+          - '404'
+    signatureParameters:
+    - *id031
+  - apiVersions:
+    - version: 1.0.0
+    language:
+      default:
+        description: This can only be done by the logged in user.
+        name: delete_user
+        summary: Delete user
+      python:
+        description: This can only be done by the logged in user.
+        name: delete_user
+        summary: Delete user.
+    parameters:
+    - *id001
+    - &id032
+      implementation: Method
+      language:
+        default:
+          description: The name that needs to be deleted
+          name: username
+          serializedName: username
+        python:
+          description: The name that needs to be deleted.
+          name: username
+          serializedName: username
+      protocol:
+        http:
+          in: path
+      required: true
+      schema: *id014
+    protocol: {}
+    requests:
+    - language:
+        default:
+          description: ''
+          name: ''
+        python:
+          description: ''
+          name: ''
+      protocol:
+        http:
+          method: delete
+          path: /user/{username}
+          uri: '{$host}'
+    responses:
+    - language:
+        default:
+          description: ''
+          name: ''
+        python:
+          description: ''
+          name: ''
+      protocol:
+        http:
+          statusCodes:
+          - '400'
+    - language:
+        default:
+          description: ''
+          name: ''
+        python:
+          description: ''
+          name: ''
+      protocol:
+        http:
+          statusCodes:
+          - '404'
+    signatureParameters:
+    - *id032
+  protocol: {}
+protocol:
+  http: {}
+schemas:
+  arrays:
+  - *id033
+  - *id034
+  - *id035
+  - *id036
+  - *id037
+  - *id038
+  - *id039
+  - *id040
+  - *id041
+  - *id042
+  booleans:
+  - *id043
+  choices:
+  - *id044
+  - *id045
+  - *id046
+  - *id047
+  constants:
+  - *id005
+  - *id048
+  dateTimes:
+  - *id049
+  - *id026
+  dictionaries:
+  - *id050
+  numbers:
+  - *id002
+  - *id011
+  - *id025
+  - *id051
+  - *id052
+  - *id053
+  - *id054
+  objects:
+  - *id006
+  - *id055
+  - *id056
+  - *id057
+  - *id018
+  - *id022
+  - apiVersions:
+    - version: 1.0.0
+    language:
+      default:
+        description: ''
+        name: ApiResponse
+        namespace: ''
+      python:
+        description: ApiResponse.
+        name: ApiResponse
+        namespace: ''
+    properties:
+    - language:
+        default:
+          description: ''
+          name: code
+        python:
+          description: ''
+          name: code
+      protocol: {}
+      schema: *id051
+      serializedName: code
+    - language:
+        default:
+          description: ''
+          name: type
+        python:
+          description: ''
+          name: type
+      protocol: {}
+      schema: &id070
+        apiVersions:
+        - version: 1.0.0
+        language:
+          default:
+            description: ''
+            name: ApiResponseType
+          python:
+            description: ''
+            name: apiresponsetype
+        protocol: {}
+        type: string
+      serializedName: type
+    - language:
+        default:
+          description: ''
+          name: message
+        python:
+          description: ''
+          name: message
+      protocol: {}
+      schema: &id071
+        apiVersions:
+        - version: 1.0.0
+        language:
+          default:
+            description: ''
+            name: ApiResponseMessage
+          python:
+            description: ''
+            name: apiresponsemessage
+        protocol: {}
+        type: string
+      serializedName: message
+    protocol: {}
+    type: object
+  strings:
+  - *id003
+  - *id058
+  - *id059
+  - *id060
+  - *id061
+  - *id014
+  - *id062
+  - *id063
+  - *id064
+  - *id065
+  - *id066
+  - *id067
+  - *id068
+  - *id069
+  - *id070
+  - *id071
+security:
+  authenticationRequired: true

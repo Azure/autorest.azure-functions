@@ -1,0 +1,16 @@
+-e .
+tox
+invoke
+colorama
+pylint==2.5.3
+pytest
+ptvsd
+mypy
+black
+autopep8
+pep8
+pytest-sugar
+pytest-cov
+pytest-xdist
+pytest-randomly
+pytest-instafail
