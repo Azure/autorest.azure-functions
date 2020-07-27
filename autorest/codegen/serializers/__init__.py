@@ -9,6 +9,7 @@ from pathlib import Path
 
 from .azure_functions import Languages
 from .azure_functions.python import AzureFunctionsPythonSerializer
+from .azure_functions.csharp import AzureFunctionsCSharpSerializer
 from ..models import CodeModel
 from ...jsonrpc import AutorestAPI
 
@@ -47,8 +48,7 @@ class JinjaSerializer:
             serializer.serialize()
         elif language == Languages.CSHARP.value:
             _LOGGER.debug("AzureFunctionsCSharpSerializer serializing now")
-            # TODO: replace with CSharp impl
-            serializer = AzureFunctionsPythonSerializer(
+            serializer = AzureFunctionsCSharpSerializer(
                     autorest_api=self._autorestapi,
                     code_model=code_model,
                     function_app_path=function_app_path,
