@@ -115,10 +115,8 @@ class AzureFunctionsCSharpSerializer(AzureFunctionsSerializer):
         # )
 
         # Write the local.settings.json file in the Azure Functions App folder
-        # self.autorest_api.write_file(
-        #        function_app_path / Path("local.settings.json"),
-        #        azure_functions_serializer.serialize_local_settings_json_file()
-        # )
+        self.autorest_api.write_file(function_app_path / Path("local.settings.json"),
+                                     azure_functions_serializer.serialize_local_settings_json_file())
 
         # Write the .gitignore file in the Azure Functions App folder
         self.autorest_api.write_file(
@@ -223,11 +221,10 @@ class AzureFunctionsCSharpAppSerializer(object):
         return prettify_json(template.render())
         # return prettify_json(template.render(version='"2.0"', extension_bundle=self._get_extension_bundle()))
 
-    # def serialize_local_settings_json_file(self):
-    #    template = self.env.get_template("local.settings.json.jinja2")
-    #    return prettify_json(template.render(is_encrypted="false",
-    #                                         azure_web_jobs_storage_secret='""',
-    #                                         language_worker_runtime='"python"'))
+    def serialize_local_settings_json_file(self):
+        template = self.env.get_template("local.settings.json.jinja2")
+        return prettify_json(template.render())
+        # return prettify_json(template.render(is_encrypted="false", azure_web_jobs_storage_secret='""', language_worker_runtime='"python"'))
 
     # def serialize_proxies_json_file(self):
     #    template = self.env.get_template("proxies.json.jinja2")
