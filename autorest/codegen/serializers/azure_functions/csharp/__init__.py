@@ -58,7 +58,7 @@ class AzureFunctionsCSharpSerializer(AzureFunctionsSerializer):
 
         _LOGGER.debug("Generating Function App contents")
         self._serialize_and_write_function_app_contents(
-            env=self.azure_functions_templates_env, function_app_path=self.function_app_path)
+            env=self.azure_functions_templates_env, code_model=self.code_model, function_app_path=self.function_app_path)
 
         # Writes the model folder
         _LOGGER.debug("Generating python model folders")
@@ -83,7 +83,7 @@ class AzureFunctionsCSharpSerializer(AzureFunctionsSerializer):
         #self.autorest_api.write_file(models_path / Path("__init__.py"), ModelInitSerializer(code_model=code_model, env=env).serialize())
 
     def _serialize_and_write_function_app_contents(
-            self, env: Environment, function_app_path: Path) -> None:
+            self, env: Environment, code_model: CodeModel, function_app_path: Path) -> None:
         """Create the top level function all files.
 
         This generates the following files -
@@ -119,7 +119,7 @@ class AzureFunctionsCSharpSerializer(AzureFunctionsSerializer):
 
         # Write the csproj file in the Azure Functions App folder
         self.autorest_api.write_file(
-            function_app_path / Path("app.csproj"), azure_functions_serializer.serialize_csproj_file())
+            function_app_path / Path(code_model.namespace + ".csproj"), azure_functions_serializer.serialize_csproj_file())
 
         # Write the .funcignore file in the Azure Functions App folder
         # self.autorest_api.write_file(
