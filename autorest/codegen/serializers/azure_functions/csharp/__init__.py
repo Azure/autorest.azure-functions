@@ -122,6 +122,10 @@ class AzureFunctionsCSharpSerializer(AzureFunctionsSerializer):
         self.autorest_api.write_file(
             function_app_path / Path(".gitignore"), azure_functions_serializer.serialize_gitignore_file())
 
+        # Write the csproj file in the Azure Functions App folder
+        self.autorest_api.write_file(
+            function_app_path / Path("app.csproj"), azure_functions_serializer.serialize_csproj_file())
+
         # Write the .funcignore file in the Azure Functions App folder
         # self.autorest_api.write_file(
         #        function_app_path /
@@ -225,6 +229,10 @@ class AzureFunctionsCSharpAppSerializer(object):
         template = self.env.get_template("local.settings.json.jinja2")
         return prettify_json(template.render())
         # return prettify_json(template.render(is_encrypted="false", azure_web_jobs_storage_secret='""', language_worker_runtime='"python"'))
+
+    def serialize_csproj_file(self):
+        template = self.env.get_template("app.csproj.jinja2")
+        return template.render()
 
     # def serialize_proxies_json_file(self):
     #    template = self.env.get_template("proxies.json.jinja2")
