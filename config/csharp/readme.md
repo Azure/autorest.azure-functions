@@ -11,32 +11,33 @@ pass-thru:
   - subset-reducer
 # version: 3.0.6258
 use-extension:
-  "@autorest/modelerfour": "4.13.351"
+  "@autorest/modelerfour": "4.15.396"
 
 modelerfour:
   group-parameters: true
   flatten-models: true
   flatten-payloads: true
-  resolve-schema-name-collisons: true
+#  resolve-schema-name-collisons: true
   always-create-content-type-parameter: true
-  multiple-request-parameter-flattening: false
-  naming:
-    parameter: snakecase
-    property: snakecase
-    operation: snakecase
-    operationGroup:  pascalcase
-    choice:  pascalcase
-    choiceValue:  snakecase
-    constant:  snakecase
-    constantParameter:  snakecase
-    type:  pascalcase
-    local: _ + snakecase
-    global: snakecase
-    preserve-uppercase-max-length: 6
-    override:
-      $host: $host
-      base64: base64
-      IncludeAPIs: include_apis
+#  multiple-request-parameter-flattening: false
+#  always-create-content-type-parameter: true
+#  naming:
+#    parameter: snakecase
+#    property: snakecase
+#    operation: snakecase
+#    operationGroup:  pascalcase
+#    choice:  pascalcase
+#    choiceValue:  snakecase
+#    constant:  snakecase
+#    constantParameter:  snakecase
+#    type:  pascalcase
+#    local: _ + snakecase
+#    global: snakecase
+#    preserve-uppercase-max-length: 6
+#    override:
+#      $host: $host
+#      base64: base64
+#      IncludeAPIs: include_apis
 
 
 pipeline:
@@ -54,11 +55,11 @@ pipeline:
   python/m2r:
     input: modelerfour/identity
 
-  python/namer:
+  python/namercsharp:
     input: python/m2r
 
   python/codegen:
-    input: python/namer
+    input: python/namercsharp
     output-artifact: python-files
 
   python/codegen/emitter:

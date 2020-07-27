@@ -58,7 +58,7 @@ class AzureFunctionsCSharpSerializer(AzureFunctionsSerializer):
 
         _LOGGER.debug("Generating Function App contents")
         self._serialize_and_write_function_app_contents(
-            env=self.azure_functions_templates_env, function_app_path=self.function_app_path)
+            env=self.azure_functions_templates_env, code_model=self.code_model, function_app_path=self.function_app_path)
 
         # Writes the model folder
         _LOGGER.debug("Generating python model folders")
@@ -83,14 +83,15 @@ class AzureFunctionsCSharpSerializer(AzureFunctionsSerializer):
         #self.autorest_api.write_file(models_path / Path("__init__.py"), ModelInitSerializer(code_model=code_model, env=env).serialize())
 
     def _serialize_and_write_function_app_contents(
-            self, env: Environment, function_app_path: Path) -> None:
+            self, env: Environment, code_model: CodeModel, function_app_path: Path) -> None:
         """Create the top level function all files.
 
         This generates the following files -
         - host.json
-        # - requirments.txt
-        # - local.settings.json
+        - local.settings.json
         - .gitignore
+        - app.csproj
+        - .vscode files
         # - README.md
 
         :param code_model:
@@ -108,12 +109,6 @@ class AzureFunctionsCSharpSerializer(AzureFunctionsSerializer):
             azure_functions_serializer.serialize_host_json_file()
         )
 
-        # Write the requirments.txt file in the Azure Functions App folder
-        # self.autorest_api.write_file(
-        #        function_app_path / Path("requirements.txt"),
-        #        azure_functions_serializer.serialize_requirements_txt_file()
-        # )
-
         # Write the local.settings.json file in the Azure Functions App folder
         self.autorest_api.write_file(function_app_path / Path("local.settings.json"),
                                      azure_functions_serializer.serialize_local_settings_json_file())
@@ -124,7 +119,7 @@ class AzureFunctionsCSharpSerializer(AzureFunctionsSerializer):
 
         # Write the csproj file in the Azure Functions App folder
         self.autorest_api.write_file(
-            function_app_path / Path("app.csproj"), azure_functions_serializer.serialize_csproj_file())
+            function_app_path / Path(code_model.namespace + ".csproj"), azure_functions_serializer.serialize_csproj_file())
 
         # Write the .funcignore file in the Azure Functions App folder
         # self.autorest_api.write_file(
@@ -156,11 +151,8 @@ class AzureFunctionsCSharpSerializer(AzureFunctionsSerializer):
         azure_functions_serializer = AzureFunctionsCSharpAppSerializer(
             env=env, async_mode=False)
 
-        # self.autorest_api.write_file(
-        #        function_app_path / Path(_VSCODE_FOLDER_NAME) /
-        #        Path("extensions.json"),
-        #        azure_functions_serializer.serialize_extensions_json_file()
-        # )
+        self.autorest_api.write_file(function_app_path / Path(_VSCODE_FOLDER_NAME) / Path(
+            "extensions.json"), azure_functions_serializer.serialize_extensions_json_file())
 
     def _serialize_and_write_functions(
             self, code_model: CodeModel, env: Environment,
@@ -238,17 +230,13 @@ class AzureFunctionsCSharpAppSerializer(object):
     #    template = self.env.get_template("proxies.json.jinja2")
     #    return template.render()
 
-    # def serialize_requirements_txt_file(self):
-    #    template = self.env.get_template("requirements.txt.jinja2")
-    #    return template.render()
-
     # def serialize_readme_md_file(self, function_app_path):
     #    template = self.env.get_template("readme.md.jinja2")
     #    return template.render(function_app_name=function_app_path)
 
-    # def serialize_extensions_json_file(self):
-    #    template = self.env.get_template("vscode-extensions.json.jinja2")
-    #    return template.render()
+    def serialize_extensions_json_file(self):
+        template = self.env.get_template("vscode/extensions.json.jinja2")
+        return prettify_json(template.render())
 
     # def serialize_launch_json_file(self):
     #    template = self.env.get_template("vscode-launch.json.jinja2")
