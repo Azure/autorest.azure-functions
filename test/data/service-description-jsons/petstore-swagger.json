@@ -282,7 +282,7 @@
         "summary": "Updates a pet in the store with form data",
         "operationId": "updatePetWithForm",
         "consumes": [
-          "application/x-www-form-urlencoded"
+          "application/json"
         ],
         "produces": [
           "application/json",
