@@ -1,6 +1,17 @@
 # project-stencil
 
-See [here](https://github.com/Azure/autorest.python/wiki/Generating-with-autorest-for-python-v5.0.0)
+Generates Azure Functions from Open API Spec.
+
+## Supported Languages
+
+To see the language specific implementations, go to their respective repos.
+
+|Language|Repo|
+| :-----| :----|
+|C#|<https://github.com/Azure/autorest.azure-functions-csharp>|
+|Java|<https://github.com/Azure/autorest.azure-functions-java>|
+|Python|<https://github.com/Azure/autorest.azure-functions-python>|
+|TypeScript|<https://github.com/Azure/autorest.azure-functions-typescript>|
 
 
 ### Autorest plugin configuration
