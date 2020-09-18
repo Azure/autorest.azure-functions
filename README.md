@@ -33,6 +33,8 @@ npm install -g autorest
 
 CLI: 
 
+Autorest works on all the platforms and the following CLI example is from Windows. Also, the `--input-file` parameter can take in a URL as well.
+
 #### TypeScript
 
 ```bash
