@@ -29,6 +29,41 @@ To run Stencil on your box today, you need to have NodeJS and NPM installed. We 
 npm install -g autorest
 ```
 
+## Usage
+
+CLI: 
+
+#### TypeScript
+
+```bash
+autorest --azure-functions-typescript --input-file:C:\\path\\to\\spec.json --output-folder:./generated-azfunctions --version:3.0.6314 --no-namespace-folders:true
+```
+
+#### Python
+
+```bash
+autorest --azure-functions-python --input-file:C:\\path\\to\\spec.json  --output-folder:./generated-azfunctions --version:3.0.6314 --no-namespace-folders:true
+```
+
+#### Java
+
+```bash
+autorest --azure-functions-java --input-file:C:\\path\\to\\spec.json --output-folder:./generated-azfunctions --version:3.0.6314 --namespace:CovidScreeningNamespace
+```
+
+#### C#
+
+```bash
+autorest --azure-functions-csharp --input-file:C:\\path\\to\\spec.json --output-folder:./generated-azfunctions --version:3.0.6314 --namespace:CovidScreeningNamespace
+```
+
+Once you create the function app folders, you can open the function app in VSCode. Once opened, Azure Function Extension for VSCode would detect the app as a Functions App. If it fails to detect it as a functions app automatically, you can use the extension to detect it.
+
+Note:
+- Please install Java and python if you are going to create Python and Java functions as the plugins need them to run itself.
+- Make suure you have Azure-Functions-Core-Tools installed on the box to use the generated functions.
+- There is a bug in C# generator if you set the output-folder as a simple string. Please add `./` to make sure that the output folder is of URL format.
+
 ## Contributing
 
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us the rights to use your contribution. For details, visit [https://cla.microsoft.com](https://cla.microsoft.com).
