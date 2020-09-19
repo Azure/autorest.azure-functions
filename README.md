@@ -1,6 +1,6 @@
-# project-stencil
+# Azure Functions code generator for Open API Specs
 
-Generates Azure Functions from Open API Spec.
+f.k.a: Project Stencil: Generate Azure Functions from Open API Spec across multiple languages.
 
 ## Supported Languages
 
@@ -63,7 +63,7 @@ Once you create the function app folders, you can open the function app in VSCod
 
 Note:
 - Please install Java and python if you are going to create Python and Java functions as the plugins need them to run itself.
-- Make suure you have Azure-Functions-Core-Tools installed on the box to use the generated functions.
+- Make sure you have Azure-Functions-Core-Tools installed on the box to use the generated functions.
 - There is a bug in C# generator if you set the output-folder as a simple string. Please add `./` to make sure that the output folder is of URL format.
 
 ## Contributing
