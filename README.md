@@ -38,25 +38,25 @@ Autorest works on all the platforms and the following CLI example is from Window
 #### TypeScript
 
 ```bash
-autorest --azure-functions-typescript --input-file:C:\\path\\to\\spec.json --output-folder:./generated-azfunctions --version:3.0.6314 --no-namespace-folders:true
+autorest --azure-functions-typescript --input-file:C:\\path\\to\\spec.json --output-folder:./generated-azfunctions --version:3.0.6320 --no-namespace-folders:true
 ```
 
 #### Python
 
 ```bash
-autorest --azure-functions-python --input-file:C:\\path\\to\\spec.json  --output-folder:./generated-azfunctions --version:3.0.6314 --no-namespace-folders:true
+autorest --azure-functions-python --input-file:C:\\path\\to\\spec.json  --output-folder:./generated-azfunctions --version:3.0.6320 --no-namespace-folders:true
 ```
 
 #### Java
 
 ```bash
-autorest --azure-functions-java --input-file:C:\\path\\to\\spec.json --output-folder:./generated-azfunctions --version:3.0.6314 --namespace:CovidScreeningNamespace
+autorest --azure-functions-java --input-file:C:\\path\\to\\spec.json --output-folder:./generated-azfunctions --version:3.0.6320 --namespace:com.company
 ```
 
 #### C#
 
 ```bash
-autorest --azure-functions-csharp --input-file:C:\\path\\to\\spec.json --output-folder:./generated-azfunctions --version:3.0.6314 --namespace:CovidScreeningNamespace
+autorest --azure-functions-csharp --input-file:C:\\path\\to\\spec.json --output-folder:./generated-azfunctions --version:3.0.6320 --namespace:Company.Namespace
 ```
 
 Once you create the function app folders, you can open the function app in VSCode. Once opened, Azure Function Extension for VSCode would detect the app as a Functions App. If it fails to detect it as a functions app automatically, you can use the extension to detect it.
