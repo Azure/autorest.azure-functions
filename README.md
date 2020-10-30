@@ -31,32 +31,48 @@ npm install -g autorest
 
 ## Usage
 
-CLI: 
+### CLI:
 
 Autorest works on all the platforms and the following CLI example is from Windows. Also, the `--input-file` parameter can take in a URL as well.
 
 #### TypeScript
 
 ```bash
-autorest --azure-functions-typescript --input-file:C:\\path\\to\\spec.json --output-folder:./generated-azfunctions --version:3.0.6320 --no-namespace-folders:true
+autorest --azure-functions-typescript \
+         --input-file:C:\\path\\to\\spec.json \
+         --output-folder:./generated-azfunctions \
+         --no-namespace-folders:true \
+         --version:3.0.6320
 ```
 
 #### Python
 
 ```bash
-autorest --azure-functions-python --input-file:C:\\path\\to\\spec.json  --output-folder:./generated-azfunctions --version:3.0.6320 --no-namespace-folders:true
+autorest --azure-functions-python \
+         --input-file:C:\\path\\to\\spec.json \
+         --output-folder:./generated-azfunctions \
+         --no-namespace-folders:true \
+         --version:3.0.6320
 ```
 
 #### Java
 
 ```bash
-autorest --azure-functions-java --input-file:C:\\path\\to\\spec.json --output-folder:./generated-azfunctions --version:3.0.6320 --namespace:com.company
+autorest --azure-functions-java \
+         --input-file:C:\\path\\to\\spec.json \
+         --output-folder:./generated-azfunctions \
+         --namespace:com.company \
+         --version:3.0.6320
 ```
 
 #### C#
 
 ```bash
-autorest --azure-functions-csharp --input-file:C:\\path\\to\\spec.json --output-folder:./generated-azfunctions --version:3.0.6320 --namespace:Company.Namespace
+autorest --azure-functions-csharp \
+         --input-file:C:\\path\\to\\spec.json \
+         --output-folder:./generated-azfunctions \
+         --namespace:Company.Namespace \
+         --version:3.0.6320
 ```
 
 Once you create the function app folders, you can open the function app in VSCode. Once opened, Azure Function Extension for VSCode would detect the app as a Functions App. If it fails to detect it as a functions app automatically, you can use the extension to detect it.
@@ -65,6 +81,12 @@ Note:
 - Please install Java and python if you are going to create Python and Java functions as the plugins need them to run itself.
 - Make sure you have Azure-Functions-Core-Tools installed on the box to use the generated functions.
 - There is a bug in C# generator if you set the output-folder as a simple string. Please add `./` to make sure that the output folder is of URL format.
+
+### VSCode:
+
+You can use this plugin directly from VSCode using the 'HTTP Triggers from OpenAPI (v2/v3) Specification File' template option. This template shows up when you select the supported languages.
+
+![StencilInAction](https://github.com/Azure/autorest.azure-functions/blob/master/StencilGenerationPython.gif?raw=true)
 
 ## Contributing
 
